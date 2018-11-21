@@ -38,6 +38,10 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 '''
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return "Hello world"
+
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
